@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 846401858687526466}
   - component: {fileID: 3319557814552367900}
   - component: {fileID: 7509894675263460568}
-  - component: {fileID: 2780977250047082287}
+  - component: {fileID: 4387631799933462779}
   m_Layer: 0
   m_Name: AR
   m_TagString: Untagged
@@ -396,7 +396,7 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2780977250047082287
+--- !u!114 &4387631799933462779
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -408,6 +408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa355cbb119316a4c8d70fe5664183ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gun
+  weaponSlot: 1
+  automatic: 1
   reloadTime: 1
   fireRate: 0.15
   magSize: 20
@@ -416,4 +418,4 @@ MonoBehaviour:
   weaponFlash: {fileID: 3347933326699972124, guid: 927546eeb0ee8744581c4dc4a701c240, type: 3}
   droppedWeapon: {fileID: 8825666092754482918, guid: f21d0a566c818b649ac2d51ecf1a7464, type: 3}
   recoilDistance: 0.1
-  recoilSpeed: 10
+  recoilSpeed: 15

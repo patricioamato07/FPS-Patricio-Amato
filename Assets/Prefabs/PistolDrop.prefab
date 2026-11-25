@@ -191,8 +191,8 @@ GameObject:
   - component: {fileID: 4952727429218122}
   - component: {fileID: 1119794370419238256}
   - component: {fileID: 4889831520849856227}
-  - component: {fileID: 4054486928399125658}
   - component: {fileID: -5440080860660220826}
+  - component: {fileID: 1069847840922442156}
   m_Layer: 0
   m_Name: PistolDrop
   m_TagString: Untagged
@@ -208,14 +208,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694449805434718}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.70710576, w: 0.7071079}
+  m_LocalPosition: {x: -48.93, y: 1.329, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4827498857130004}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!54 &1119794370419238256
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -264,21 +264,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1995934, y: 0.22713058, z: 0.3863359}
   m_Center: {x: 0, y: 0, z: -0.030000001}
---- !u!114 &4054486928399125658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1694449805434718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07c5ae3c6d7763949a5e322503558cea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickUp
-  highLightMaterial: {fileID: 2100000, guid: 26b62d978edbe984798871f201116987, type: 2}
-  weaponPrefab: {fileID: 1694449805434718, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
-  lookRange: 3
 --- !u!114 &-5440080860660220826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +294,24 @@ MonoBehaviour:
   m_DefaultActionMap: OnFoot
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1069847840922442156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694449805434718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a01fc8dcf304f04d8c4037ebe0096c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponPickup
+  gunPrefab: {fileID: 484664533371883561, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
+  pickupRadius: 1.5
+  pickupDelay: 1
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &1748277932983872
 GameObject:
   m_ObjectHideFlags: 0

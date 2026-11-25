@@ -15,11 +15,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     private bool isGrounded;
     private PlayerInput PlayerInput;
+    private PlayerHealth health;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        health = GetComponentInParent<PlayerHealth>();
     }
     void Update()
     {
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnJump()
     {
+        if (!enabled || (health != null && health.IsDead)) return;
         if (isGrounded) 
         {
             rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
@@ -50,6 +53,12 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer()
     {
+        if (health != null && health.IsDead)
+        {
+            rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
+            return;
+        }
+
         Vector3 direction = transform.right * moveInput.x + transform.forward * moveInput.y;
         direction.Normalize();
         rb.linearVelocity = new Vector3(direction.x * moveSpeed, rb.linearVelocity.y, direction.z * moveSpeed);

@@ -24,7 +24,6 @@ public class Enemy : MonoBehaviour
     private Renderer rend;
     private Material originalMaterial;
 
-    //AI Settings. Will be moved to a Scriptable Object later for general use and Enemy Variant configuration. Probably have to make everything public.
     public int currentPointIndex = 0;
     public Vector3 currentTarget;
     public float positionThreshold = 1f;
@@ -66,16 +65,23 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Damage"))
         {
-            health -= 10;
+            TakeDamage(10);
+        }
+    }
 
-            if(health <= 0)
-            {
-                Die();
-            }
-            else
-            {
-                StartCoroutine(Blink());
-            }
+    public void TakeDamage(float amount)
+    {
+        if (health <= 0) return;
+
+        health -= Mathf.RoundToInt(amount);
+
+        if (health <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            StartCoroutine(Blink());
         }
     }
 

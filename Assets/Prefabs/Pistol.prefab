@@ -225,6 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa355cbb119316a4c8d70fe5664183ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gun
+  weaponSlot: 0
+  automatic: 1
   reloadTime: 1
   fireRate: 0.35
   magSize: 8
@@ -534,7 +536,7 @@ Transform:
   m_GameObject: {fileID: 4264857175674809712}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.024500012, z: -0.26}
+  m_LocalPosition: {x: 0, y: 0.024500012, z: -0.1995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
